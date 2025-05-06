@@ -1,0 +1,35 @@
+package org.example.demo.controller.vistas;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import org.example.demo.complementos.CargarFXML;
+
+import java.io.IOException;
+
+public class Reservas {
+
+
+    @FXML
+    private Button btn_consumo,btn_pago;
+
+    public void initialize() {
+
+
+
+    }
+
+
+    @FXML
+    public void cargarPagos() throws IOException {
+
+        CargarFXML fxml = new CargarFXML("/templates/vistas/pagos.fxml",963.0,529.0,true);
+        fxml.Cargar();
+    }
+
+    @FXML
+    public void cargarConsumo() throws IOException {
+        CargarFXML fxml = new CargarFXML("/templates/vistas/consumo.fxml",963.0,529.0,true);
+        fxml.Cargar();
+    }
+
+}

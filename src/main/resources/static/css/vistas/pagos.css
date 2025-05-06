@@ -1,0 +1,40 @@
+
+#cont_pagos,#cont_tablas {
+
+    -fx-border-width: 1;
+    -fx-border-color: black;
+
+}
+
+#cont_lista{
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: black;
+}
+
+#btn_pago{
+    -fx-background-color: #5789b8;
+}
+
+#btn_imp,#btn_impcon{
+    -fx-background-color: #464c4e;
+}
+
+
+.text-field,.combo-box{
+    -fx-background-color: #FFFFFF;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: black;
+}
+
+.table-view .column-header{
+    -fx-background-color: #1b4541;
+
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: white;
+}
+
+#btn_salir{
+    -fx-background-color: #b30f0f;
+}

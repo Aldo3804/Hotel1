@@ -1,0 +1,38 @@
+package org.example.demo.servicio;
+
+import org.example.demo.dao.ProductoDAO;
+import org.example.demo.entidades.Producto;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ProductoServicio {
+
+    private final ProductoDAO productoDAO;
+
+    public ProductoServicio(ProductoDAO productoDAO) {
+        this.productoDAO = productoDAO;
+    }
+
+    public boolean guardarProducto(Producto producto) {
+        if (producto.getIdproducto() == 0) {
+            return productoDAO.agregarProducto(producto);
+        } else {
+            return productoDAO.actualizarProducto(producto);
+        }
+
+    }
+
+    public boolean eliminarProducto(Producto producto) {
+        return productoDAO.eliminarProducto(producto);
+    }
+
+    public List<Producto> listarProductos() {
+        return productoDAO.listarProducto().stream().sorted(
+                        Comparator.comparing(Producto::getNombre))
+                .collect(Collectors.toList());
+    }
+
+
+}

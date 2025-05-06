@@ -1,0 +1,15 @@
+.text-field{
+    -fx-background-color: #FFFFFF;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: black;
+}
+
+#btn_ingresar{
+    -fx-background-color: #2e9ec3;
+}
+
+#btn_salir:hover{
+
+    -fx-text-fill: white;
+
+}

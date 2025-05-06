@@ -1,0 +1,35 @@
+
+#cont_reservas,#cont_tablas {
+
+    -fx-border-width: 1;
+    -fx-border-color: black;
+
+}
+
+.text-field{
+    -fx-background-color: #FFFFFF;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: black;
+}
+
+.table-view .column-header{
+    -fx-background-color: #1b4541;
+
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: white;
+}
+
+#btn_nuevo,#btn_consumo{
+    -fx-background-color: #5789b8;
+}
+#btn_guardar,#btn_pago{
+    -fx-background-color: #309824;
+}
+#btn_eliminar{
+    -fx-background-color: #b30f0f;
+}
+#btn_buscar{
+    -fx-background-color: #1b4541;
+}

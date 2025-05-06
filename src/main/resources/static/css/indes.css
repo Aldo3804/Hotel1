@@ -1,0 +1,9 @@
+
+#barra_2,#barra_1{
+    -fx-background-color: #1b4541;
+}
+
+.button{
+    -fx-background-color: #255c57;
+    -fx-background-radius: 0px;
+}
