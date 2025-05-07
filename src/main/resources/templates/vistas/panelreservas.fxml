@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="590.0" prefWidth="1011.0" stylesheets="@/static/css/vistas/panelreservas.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controller.vistas.PanelReservas">
+<AnchorPane prefHeight="590.0" prefWidth="1011.0" stylesheets="@/static/css/vistas/panelreservas.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.vistas.PanelReservas">
    <children>
       <HBox alignment="CENTER_LEFT" layoutY="7.0" prefHeight="50.0" prefWidth="1011.0" AnchorPane.bottomAnchor="539.6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

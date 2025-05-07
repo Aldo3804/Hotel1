@@ -1,4 +1,4 @@
-package org.example.demo.complementos;
+package org.example.complementos;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

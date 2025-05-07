@@ -1,22 +1,19 @@
-package org.example.demo.controller.vistas;
+package org.example.controller.vistas;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.example.demo.complementos.alertas.AlertaFactory;
-import org.example.demo.complementos.animaciones.Eventos;
-import org.example.demo.complementos.animaciones.stack.Acercar;
-import org.example.demo.entidades.Producto;
-import org.example.demo.logica.ProductoImplDAO;
-import org.example.demo.servicio.ProductoServicio;
+import org.example.complementos.alertas.AlertaFactory;
+import org.example.complementos.animaciones.Eventos;
+import org.example.complementos.animaciones.stack.Acercar;
+import org.example.entidades.Producto;
+import org.example.logica.ProductoImplDAO;
+import org.example.servicio.ProductoServicio;
 
-import java.sql.SQLException;
-import java.util.Comparator;
+
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ProductoController {
 

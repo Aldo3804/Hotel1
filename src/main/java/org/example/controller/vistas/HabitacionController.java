@@ -1,4 +1,4 @@
-package org.example.demo.controller.vistas;
+package org.example.controller.vistas;
 
 
 import javafx.collections.FXCollections;
@@ -6,13 +6,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.example.demo.complementos.alertas.AlertaFactory;
-import org.example.demo.complementos.animaciones.Eventos;
-import org.example.demo.complementos.animaciones.stack.Acercar;
-import org.example.demo.dao.HabitacionDAO;
-import org.example.demo.entidades.Habitacion;
-import org.example.demo.logica.HabitacionImplDAO;
-import org.example.demo.servicio.HabitacionServicio;
+import org.example.complementos.alertas.AlertaFactory;
+import org.example.complementos.animaciones.Eventos;
+import org.example.complementos.animaciones.stack.Acercar;
+import org.example.entidades.Habitacion;
+import org.example.logica.HabitacionImplDAO;
+import org.example.servicio.HabitacionServicio;
 
 import java.sql.SQLException;
 import java.util.List;

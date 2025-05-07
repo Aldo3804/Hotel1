@@ -12,16 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane prefHeight="689.0" prefWidth="1166.0" stylesheets="@/static/css/indes.css" xmlns="http://javafx.com/javafx/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controller.IndexController">
+<BorderPane prefHeight="689.0" prefWidth="1166.0" stylesheets="@/static/css/indes.css" xmlns="http://javafx.com/javafx/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.IndexController">
    <left>
       <VBox prefHeight="671.0" prefWidth="155.0" BorderPane.alignment="CENTER">
          <children>
             <VBox fx:id="barra_2" prefHeight="671.0" prefWidth="133.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="btn" mnemonicParsing="false" prefHeight="100.0" prefWidth="158.0" text="MENÚ" textFill="WHITE" VBox.vgrow="ALWAYS">
-                     <graphic>
-                        <FontIcon iconColor="WHITE" iconLiteral="bx-menu" iconSize="50" />
-                     </graphic>
                      <font>
                         <Font name="Roboto Regular" size="18.0" />
                      </font>

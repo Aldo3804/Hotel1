@@ -1,9 +1,9 @@
-package org.example.demo.servicio;
+package org.example.servicio;
 
 
-import org.example.demo.dao.HabitacionDAO;
-import org.example.demo.entidades.Habitacion;
-import org.example.demo.entidades.Producto;
+
+import org.example.dao.HabitacionDAO;
+import org.example.entidades.Habitacion;
 
 import java.sql.SQLException;
 import java.util.Comparator;

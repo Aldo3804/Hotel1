@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="536.0" prefWidth="666.0" stylesheets="@/static/css/login.css" xmlns="http://javafx.com/javafx/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controller.LoginController">
+<HBox prefHeight="536.0" prefWidth="666.0" stylesheets="@/static/css/login.css" xmlns="http://javafx.com/javafx/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.LoginController">
    <children>
       <VBox alignment="CENTER" prefHeight="536.0" prefWidth="347.0" style="-fx-background-color: #1b4541;" HBox.hgrow="ALWAYS">
          <children>

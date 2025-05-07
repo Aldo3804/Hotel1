@@ -1,8 +1,10 @@
-package org.example.demo.logica;
+package org.example.logica;
 
-import org.example.demo.conexion.Conexion;
-import org.example.demo.dao.ClienteDAO;
-import org.example.demo.entidades.Cliente;
+
+
+import org.example.conexion.Conexion;
+import org.example.dao.ClienteDAO;
+import org.example.entidades.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

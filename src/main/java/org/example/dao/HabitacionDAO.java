@@ -1,7 +1,9 @@
-package org.example.demo.dao;
+package org.example.dao;
 
 
-import org.example.demo.entidades.Habitacion;
+
+
+import org.example.entidades.Habitacion;
 
 import java.sql.SQLException;
 import java.util.List;

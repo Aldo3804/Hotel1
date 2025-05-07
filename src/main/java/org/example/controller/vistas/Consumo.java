@@ -1,4 +1,4 @@
-package org.example.demo.controller.vistas;
+package org.example.controller.vistas;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;

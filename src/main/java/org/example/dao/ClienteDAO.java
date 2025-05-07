@@ -1,6 +1,8 @@
-package org.example.demo.dao;
+package org.example.dao;
 
-import org.example.demo.entidades.Cliente;
+
+
+import org.example.entidades.Cliente;
 
 import java.sql.SQLException;
 import java.util.List;

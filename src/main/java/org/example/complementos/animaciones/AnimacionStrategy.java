@@ -1,4 +1,4 @@
-package org.example.demo.complementos.animaciones;
+package org.example.complementos.animaciones;
 
 import javafx.scene.Node;
 

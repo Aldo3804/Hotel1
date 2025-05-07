@@ -1,12 +1,11 @@
-package org.example.demo.servicio;
+package org.example.servicio;
 
-import org.example.demo.dao.ClienteDAO;
-import org.example.demo.entidades.Cliente;
+
+import org.example.dao.ClienteDAO;
+import org.example.entidades.Cliente;
 
 import java.sql.SQLException;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ClienteServicio {
 

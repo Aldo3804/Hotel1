@@ -1,4 +1,4 @@
-package org.example.demo.entidades;
+package org.example.entidades;
 
 
 import lombok.*;

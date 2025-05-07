@@ -1,4 +1,4 @@
-package org.example.demo.complementos.alertas;
+package org.example.complementos.alertas;
 
 import javafx.scene.control.Alert;
 

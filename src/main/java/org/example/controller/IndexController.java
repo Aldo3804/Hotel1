@@ -1,4 +1,4 @@
-package org.example.demo.controller;
+package org.example.controller;
 
 
 import javafx.fxml.FXML;
@@ -6,10 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.layout.*;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import org.example.demo.complementos.animaciones.Eventos;
-import org.example.demo.complementos.animaciones.stack.CambiarColor;
+import org.example.complementos.animaciones.Eventos;
+import org.example.complementos.animaciones.stack.CambiarColor;
+
 
 import java.io.IOException;
 import java.util.Objects;

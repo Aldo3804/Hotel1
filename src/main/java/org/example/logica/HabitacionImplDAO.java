@@ -1,8 +1,9 @@
-package org.example.demo.logica;
+package org.example.logica;
 
-import org.example.demo.conexion.Conexion;
-import org.example.demo.dao.HabitacionDAO;
-import org.example.demo.entidades.Habitacion;
+
+import org.example.conexion.Conexion;
+import org.example.dao.HabitacionDAO;
+import org.example.entidades.Habitacion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

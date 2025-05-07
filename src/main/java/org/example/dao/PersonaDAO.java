@@ -1,8 +1,9 @@
-package org.example.demo.dao;
+package org.example.dao;
 
 
 
-import org.example.demo.entidades.Persona;
+
+import org.example.entidades.Persona;
 
 import java.util.List;
 

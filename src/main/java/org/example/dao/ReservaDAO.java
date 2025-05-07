@@ -1,7 +1,9 @@
-package org.example.demo.dao;
+package org.example.dao;
 
 
-import org.example.demo.entidades.Reserva;
+
+
+import org.example.entidades.Reserva;
 
 import java.util.List;
 

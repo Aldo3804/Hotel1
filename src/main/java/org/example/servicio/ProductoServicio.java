@@ -1,7 +1,8 @@
-package org.example.demo.servicio;
+package org.example.servicio;
 
-import org.example.demo.dao.ProductoDAO;
-import org.example.demo.entidades.Producto;
+
+import org.example.dao.ProductoDAO;
+import org.example.entidades.Producto;
 
 import java.util.Comparator;
 import java.util.List;

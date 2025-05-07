@@ -1,16 +1,18 @@
-package org.example.demo.controller.vistas;
+package org.example.controller.vistas;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.example.demo.complementos.alertas.AlertaFactory;
-import org.example.demo.complementos.animaciones.Eventos;
-import org.example.demo.complementos.animaciones.stack.Acercar;
-import org.example.demo.entidades.Cliente;
-import org.example.demo.logica.ClienteImplDAO;
-import org.example.demo.servicio.ClienteServicio;
+import org.example.complementos.alertas.AlertaFactory;
+import org.example.complementos.animaciones.Eventos;
+import org.example.complementos.animaciones.stack.Acercar;
+import org.example.entidades.Cliente;
+import org.example.logica.ClienteImplDAO;
+import org.example.servicio.ClienteServicio;
+
+
 import java.util.List;
 import java.util.stream.Collectors;
 

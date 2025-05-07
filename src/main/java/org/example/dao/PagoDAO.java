@@ -1,7 +1,9 @@
-package org.example.demo.dao;
+package org.example.dao;
 
 
-import org.example.demo.entidades.Pago;
+
+
+import org.example.entidades.Pago;
 
 import java.util.List;
 

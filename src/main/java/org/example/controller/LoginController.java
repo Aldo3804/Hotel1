@@ -1,4 +1,4 @@
-package org.example.demo.controller;
+package org.example.controller;
 
 
 import javafx.event.ActionEvent;
@@ -9,11 +9,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.example.demo.HotelApplication;
-import org.example.demo.complementos.CargarFXML;
-import org.example.demo.complementos.animaciones.Eventos;
-import org.example.demo.complementos.animaciones.stack.Acercar;
-import org.example.demo.complementos.animaciones.stack.CambiarColor;
+import org.example.complementos.CargarFXML;
+import org.example.complementos.animaciones.Eventos;
+import org.example.complementos.animaciones.stack.Acercar;
+import org.example.complementos.animaciones.stack.CambiarColor;
+
 
 import java.io.IOException;
 

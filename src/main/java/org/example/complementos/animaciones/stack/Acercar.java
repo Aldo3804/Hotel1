@@ -1,10 +1,11 @@
-package org.example.demo.complementos.animaciones.stack;
+package org.example.complementos.animaciones.stack;
 
 import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
 import javafx.util.Duration;
-import org.example.demo.complementos.animaciones.AnimacionStrategy;
+import org.example.complementos.animaciones.AnimacionStrategy;
+
 
 public class Acercar implements AnimacionStrategy {
 

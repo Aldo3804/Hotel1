@@ -1,8 +1,9 @@
-package org.example.demo.controller.vistas;
+package org.example.controller.vistas;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import org.example.demo.complementos.CargarFXML;
+import org.example.complementos.CargarFXML;
+
 
 import java.io.IOException;
 

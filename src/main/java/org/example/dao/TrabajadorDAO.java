@@ -1,8 +1,10 @@
-package org.example.demo.dao;
+package org.example.dao;
 
 
 
-import org.example.demo.entidades.Trabajador;
+
+
+import org.example.entidades.Trabajador;
 
 import java.util.List;
 
