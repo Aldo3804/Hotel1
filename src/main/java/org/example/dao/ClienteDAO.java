@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ClienteDAO {
 
-    List<Cliente> listarClientes() throws SQLException;
+    List<Cliente> listarClientes() ;
 
     boolean agregarCliente(Cliente cliente);
 

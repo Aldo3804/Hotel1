@@ -17,7 +17,7 @@ public class ProductoImplDAO implements ProductoDAO {
     public List<Producto> listarProducto() {
 
         List<Producto> lista = new ArrayList<>();
-        String sql = "SELECT * from producto";
+        String sql = "SELECT idproducto,nombre,descripcion,unidad_medida,precio_venta from producto";
 
         try (Connection conn = Conexion.getConexion();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -53,7 +53,8 @@ public class ProductoImplDAO implements ProductoDAO {
             stmt.setDouble(4, producto.getPrecio_venta());
 
 
-            return stmt.executeUpdate() > 0;
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
 
         } catch (SQLException e) {
             e.printStackTrace();

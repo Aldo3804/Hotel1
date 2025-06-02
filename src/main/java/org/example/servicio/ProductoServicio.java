@@ -4,6 +4,7 @@ package org.example.servicio;
 import org.example.dao.ProductoDAO;
 import org.example.entidades.Producto;
 
+import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +17,7 @@ public class ProductoServicio {
         this.productoDAO = productoDAO;
     }
 
-    public boolean guardarProducto(Producto producto) {
+    public boolean guardarProducto(Producto producto) throws SQLException {
         if (producto.getIdproducto() == 0) {
             return productoDAO.agregarProducto(producto);
         } else {
@@ -25,7 +26,7 @@ public class ProductoServicio {
 
     }
 
-    public boolean eliminarProducto(Producto producto) {
+    public boolean eliminarProducto(Producto producto) throws SQLException {
         return productoDAO.eliminarProducto(producto);
     }
 

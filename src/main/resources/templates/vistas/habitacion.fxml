@@ -253,7 +253,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                            <children>
-                              <Button fx:id="btn_eliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="58.0" prefWidth="123.0" text="ELIMINAR" textFill="WHITE">
+                              <Button fx:id="btn_eliminar" mnemonicParsing="false" onAction="#Eliminar" prefHeight="58.0" prefWidth="123.0" text="ELIMINAR" textFill="WHITE">
 
                                  <font>
                                     <Font name="Roboto Regular" size="14.0" />

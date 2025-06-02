@@ -15,7 +15,7 @@ public class ClienteServicio {
         this.clienteDAO = clienteDAO;
     }
 
-    public boolean guardarCliente(Cliente cliente) {
+    public boolean guardarCliente(Cliente cliente) throws SQLException {
 
         if(cliente.getIdpersona()==0){
             return clienteDAO.agregarCliente(cliente);
@@ -26,11 +26,12 @@ public class ClienteServicio {
 
     }
 
-    public boolean eliminarCliente(Cliente cliente) {
+    public boolean eliminarCliente(Cliente cliente) throws SQLException {
+
         return clienteDAO.eliminarCliente(cliente);
     }
 
-    public List<Cliente> listarClientes() throws SQLException {
+    public List<Cliente> listarClientes() {
         return clienteDAO.listarClientes();
     }
 

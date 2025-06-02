@@ -17,7 +17,7 @@ public class ClienteImplDAO implements ClienteDAO {
 
 
     @Override
-    public List<Cliente> listarClientes() throws SQLException {
+    public List<Cliente> listarClientes(){
         List<Cliente> clientes = new ArrayList<>();
         String sql = "SELECT p.*, c.codigo_cliente " +
                 "FROM persona p " +

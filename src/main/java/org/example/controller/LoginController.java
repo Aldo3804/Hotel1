@@ -49,9 +49,14 @@ public class LoginController {
     }
 
     private void complementario(){
+
         Eventos eventos = new Eventos();
-        eventos.Hover(new Acercar(0.3,1.1),new Acercar(0.3,1.0),btn_ingresar);
-        eventos.Hover(new CambiarColor(Color.web("#ffffff"),Color.web("#9f1c1c"),0.3),new CambiarColor(Color.web("#9f1c1c"),Color.web("#ffffff"),0.3),btn_salir);
+
+        eventos.HoverAcercar(0.3,1.1,btn_ingresar);
+
+        eventos.HoverCambiarColor(Color.web("#ffffff"),Color.web("#9f1c1c"),0.3,btn_salir);
+
+
     }
 
 

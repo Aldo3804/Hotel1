@@ -22,25 +22,26 @@ public class CambiarColor implements AnimacionStrategy {
     }
 
 
-
     @Override
-    public void ejecutar(Node node) {
+    public void ejecutar(Node... node) {
 
-        if (node instanceof Region region) {
-            Timeline timeline = new Timeline();
-            int pasos = 60;
-            for (int i = 0; i <= pasos; i++) {
-                double t = i / (double) pasos;
-                double tiempoFrame = t * tiempo;
+        for (Node n: node){
+            if (n instanceof Region region) {
+                Timeline timeline = new Timeline();
+                int pasos = 60;
+                for (int i = 0; i <= pasos; i++) {
+                    double t = i / (double) pasos;
+                    double tiempoFrame = t * tiempo;
 
-                Color colorInterpolado = colorInicial.interpolate(colorFinal, t);
-                String estilo = "-fx-background-color: " + toRgbString(colorInterpolado) + ";";
+                    Color colorInterpolado = colorInicial.interpolate(colorFinal, t);
+                    String estilo = "-fx-background-color: " + toRgbString(colorInterpolado) + ";";
 
-                KeyFrame keyFrame = new KeyFrame(Duration.seconds(tiempoFrame),
-                        e -> region.setStyle(estilo));
-                timeline.getKeyFrames().add(keyFrame);
+                    KeyFrame keyFrame = new KeyFrame(Duration.seconds(tiempoFrame),
+                            e -> region.setStyle(estilo));
+                    timeline.getKeyFrames().add(keyFrame);
+                }
+                timeline.play();
             }
-            timeline.play();
         }
 
 

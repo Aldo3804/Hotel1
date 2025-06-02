@@ -59,22 +59,15 @@ public class IndexController {
         cargarVistas("/templates/vistas/ajustes.fxml");
     }
 
-    public void complementos()  {
-        animarBotones(btn_inicio);
-        animarBotones(btn_cuartos);
-        animarBotones(btn_ventas);
-        animarBotones(btn_reservas);
-        animarBotones(btn_ajustes);
-    }
-
-    public void animarBotones(Node node) {
-        Eventos eventos =  new Eventos();
-        eventos.Hover(new CambiarColor(Color.web("#255c57"),Color.web("#34817a"),0.3),new CambiarColor(Color.web("#34817a"),Color.web("#255c57"),0.3),node);
-    }
 
     public void cargarVistas(String ruta) throws IOException {
         Parent fxml = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(ruta)));
         contenedor.getChildren().removeAll();
         contenedor.getChildren().setAll(fxml);
+    }
+
+    public void complementos() {
+        Eventos eventos =  new Eventos();
+        eventos.HoverCambiarColor(Color.web("#255c57"),Color.web("#34817a"),0.3,btn_ajustes,btn_cuartos,btn_ventas,btn_reservas,btn_inicio);
     }
 }

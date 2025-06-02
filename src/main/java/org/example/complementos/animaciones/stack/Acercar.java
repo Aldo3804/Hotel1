@@ -18,13 +18,15 @@ public class Acercar implements AnimacionStrategy {
     }
 
     @Override
-    public void ejecutar(Node node) {
+    public void ejecutar(Node... node) {
 
-        ScaleTransition st = new ScaleTransition(Duration.seconds(tiempo), node);
-        st.setToX(tamanio);
-        st.setToY(tamanio);
-        st.setInterpolator(Interpolator.LINEAR);
-        st.play();
+        for (Node n: node){
+            ScaleTransition st = new ScaleTransition(Duration.seconds(tiempo), n);
+            st.setToX(tamanio);
+            st.setToY(tamanio);
+            st.setInterpolator(Interpolator.LINEAR);
+            st.play();
+        }
 
     }
 }

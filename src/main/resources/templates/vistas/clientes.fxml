@@ -174,7 +174,7 @@
                                         <Insets top="20.0" />
                                     </VBox.margin>
                                     <children>
-                                        <Button fx:id="btn_nuevo" mnemonicParsing="false" onAction="#nuevo" prefHeight="58.0" prefWidth="123.0" text="NUEVO" textFill="WHITE">
+                                        <Button fx:id="btn_nuevo" mnemonicParsing="false" onAction="#Nuevo" prefHeight="58.0" prefWidth="123.0" text="NUEVO" textFill="WHITE">
                                             <font>
                                                 <Font name="Roboto Regular" size="14.0" />
                                             </font>
@@ -182,7 +182,7 @@
                                                 <Cursor fx:constant="HAND" />
                                             </cursor>
                                         </Button>
-                                        <Button fx:id="btn_guardar" mnemonicParsing="false" onAction="#guardarCliente" prefHeight="58.0" prefWidth="123.0" text="GUARDAR" textFill="WHITE">
+                                        <Button fx:id="btn_guardar" mnemonicParsing="false" onAction="#Guardar" prefHeight="58.0" prefWidth="123.0" text="GUARDAR" textFill="WHITE">
                                             <font>
                                                 <Font name="Roboto Regular" size="14.0" />
                                             </font>
@@ -260,7 +260,7 @@
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                                     <children>
-                                        <Button fx:id="btn_eliminar" mnemonicParsing="false" onAction="#eliminarCliente" prefHeight="58.0" prefWidth="123.0" text="ELIMINAR" textFill="WHITE">
+                                        <Button fx:id="btn_eliminar" mnemonicParsing="false" onAction="#Eliminar" prefHeight="58.0" prefWidth="123.0" text="ELIMINAR" textFill="WHITE">
                                             <font>
                                                 <Font name="Roboto Regular" size="14.0" />
                                             </font>

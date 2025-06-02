@@ -7,16 +7,19 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.complementos.alertas.AlertaFactory;
 import org.example.complementos.animaciones.Eventos;
-import org.example.complementos.animaciones.stack.Acercar;
 import org.example.entidades.Producto;
 import org.example.logica.ProductoImplDAO;
 import org.example.servicio.ProductoServicio;
+import org.example.validaciones.Validaciones;
 
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ProductoController {
 
+
+    //----------------------------Definicón de las variables fxml---------------------------------------------//
     @FXML
     private TableView<Producto> tablaProducto;
 
@@ -38,61 +41,74 @@ public class ProductoController {
     @FXML
     private Button btn_guardar, btn_eliminar, btn_buscar, btn_nuevo;
 
+    //------------------------------------Definicón de Clases---------------------------------------------------//
+
     private Producto producto = new Producto();
+
     private final ProductoServicio productoServicio = new ProductoServicio(new ProductoImplDAO());
 
+    //-------------------------------------Metodo de Inicio-----------------------------------------------------//
     public void initialize() {
-        configurarTabla();
-        cargarCombo();
-        cargarDatos();
+        cargarProductos();
         tablaProducto.setOnMouseClicked(e -> seleccionarProducto());
+        cargarCombo();
         complementos();
     }
 
+    //----------------------------------------Metodos FXML-----------------------------------------------------//
     @FXML
-    private void nuevo() {
+    private void Nuevo() {
         limpiar();
         producto = new Producto();
         btn_guardar.setText("GUARDAR");
     }
 
     @FXML
-    private void guardar() {
+    private void Guardar() throws SQLException {
         if (camposVacios()) {
-            AlertaFactory.Errores("Error", "Los campos están vacíos. Por favor, complételos.");
+            AlertaFactory.Errores("Error", "Se detctaron los campos vacios");
             return;
         }
 
-        formulario();
+        obtenerDatos();
+
         boolean result = productoServicio.guardarProducto(producto);
-        if (result) {
-            AlertaFactory.Informacion("Exito",producto.getIdproducto()==0 ? "El producto fue agregado correctamente" :
-                    "El producto fue modificado correctamente");
-            cargarDatos();
-            nuevo();
-        } else {
-            AlertaFactory.Errores("Error", "No se pudo guardar el producto.");
+        try{
+            if (result) {
+                AlertaFactory.Informacion("Exito",producto.getIdproducto()==0 ? "El producto fue agregado correctamente" :
+                        "El producto fue modificado correctamente");
+                cargarProductos();
+                tablaProducto.refresh();
+                Nuevo();
+            } else {
+                AlertaFactory.Errores("Error", "No se pudo guardar el producto.");
+            }
+        }catch(Exception e){
+            AlertaFactory.Errores("Excepción SQL", e.getMessage());
         }
     }
 
     @FXML
-    private void eliminar() {
+    private void Eliminar() throws SQLException {
+
         Producto seleccionado = tablaProducto.getSelectionModel().getSelectedItem();
         if (seleccionado == null) {
             AlertaFactory.Warning("Advertencia", "Debe seleccionar un producto para eliminar.");
             return;
         }
 
+
         if (productoServicio.eliminarProducto(seleccionado)) {
             AlertaFactory.Informacion("Éxito", "El producto ha sido eliminado correctamente.");
-            cargarDatos();
-            nuevo();
+            cargarProductos();
+            Nuevo();
         } else {
             AlertaFactory.Errores("Error", "No se pudo eliminar el producto.");
         }
     }
 
-    @FXML
+    //-------------------------------------Metodos Secundarios-----------------------------------------------------//
+
     private void seleccionarProducto() {
         Producto seleccionado = tablaProducto.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
@@ -105,57 +121,51 @@ public class ProductoController {
         }
     }
 
-    private void cargarCombo() {
-        ObservableList<String> medidas = FXCollections.observableArrayList("unidades", "kg", "litros", "paquete");
-        combo_medida.setItems(medidas);
-    }
 
-    private void limpiar() {
-        text_nombre.clear();
-        text_precio.clear();
-        text_descripcion.clear();
-        combo_medida.setValue(null);  // No borrar los items, solo limpiar la selección
-    }
-
-    private boolean camposVacios() {
-        return text_nombre.getText().trim().isEmpty() ||
-                text_precio.getText().trim().isEmpty() ||
-                combo_medida.getValue() == null ||
-                text_descripcion.getText().trim().isEmpty();
-    }
-
-    private void formulario() {
+    private void obtenerDatos() {
         producto.setNombre(text_nombre.getText().trim());
         producto.setDescripcion(text_descripcion.getText().trim());
         producto.setUnidad_medida(combo_medida.getValue());
         producto.setPrecio_venta(Double.parseDouble(text_precio.getText().trim()));
     }
 
-    private void cargarDatos() {
+    private void cargarProductos() {
         try {
             List<Producto> lista = productoServicio.listarProductos();
             ObservableList<Producto> observableList = FXCollections.observableArrayList(lista);
             tablaProducto.setItems(observableList);
+
+            tblNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+            tblDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
+            tblPrecio.setCellValueFactory(new PropertyValueFactory<>("precio_venta"));
+            tblMedida.setCellValueFactory(new PropertyValueFactory<>("unidad_medida"));
+
         } catch (Exception e) {
             AlertaFactory.Errores("Error al cargar los datos.", e.getMessage());
         }
     }
 
-    private void configurarTabla() {
-        tblNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        tblDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
-        tblPrecio.setCellValueFactory(new PropertyValueFactory<>("precio_venta"));
-        tblMedida.setCellValueFactory(new PropertyValueFactory<>("unidad_medida"));
+    private void cargarCombo() {
+        combo_medida.setItems(FXCollections.observableArrayList("unidades","litros","kg","paquetes"));
     }
 
     private void complementos(){
         Eventos eventos = new Eventos();
-        eventos.Hover(new Acercar(0.3,1.1),new Acercar(0.3,1.0),btn_buscar);
-        eventos.Hover(new Acercar(0.3,1.1),new Acercar(0.3,1.0),btn_eliminar);
-        eventos.Hover(new Acercar(0.3,1.1),new Acercar(0.3,1.0),btn_nuevo);
-        eventos.Hover(new Acercar(0.3,1.1),new Acercar(0.3,1.0),btn_guardar);
+        eventos.HoverAcercar(0.3,1.1,btn_buscar,btn_nuevo,btn_eliminar,btn_guardar);
     }
 
+    //--------------------------------------Metodos para Formulario---------------------------------------------//
 
+    private void limpiar(){
+        text_nombre.setText("");
+        text_precio.setText("");
+        text_descripcion.setText("");
+        combo_medida.setValue(null);
+
+    }
+
+    private boolean camposVacios(){
+        return text_nombre.getText().isEmpty() || text_precio.getText().isEmpty() || text_descripcion.getText().isEmpty() || combo_medida.getValue().isEmpty() ;
+    }
 
 }

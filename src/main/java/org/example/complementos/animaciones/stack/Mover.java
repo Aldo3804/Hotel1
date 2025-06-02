@@ -18,12 +18,14 @@ public class Mover implements AnimacionStrategy {
     }
 
     @Override
-    public void ejecutar(Node node) {
+    public void ejecutar(Node... node) {
 
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(tiempo), node);
-        tt.setToX(x1);
-        tt.setInterpolator(Interpolator.LINEAR);
-        tt.play();
+        for(Node n: node){
+            TranslateTransition tt = new TranslateTransition(Duration.seconds(tiempo), n);
+            tt.setToX(x1);
+            tt.setInterpolator(Interpolator.LINEAR);
+            tt.play();
+        }
 
     }
 }
