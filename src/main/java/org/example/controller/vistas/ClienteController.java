@@ -72,6 +72,7 @@ public class ClienteController {
             if (result) {
                 AlertaFactory.Informacion("Exito",cliente.getIdpersona()==0 ? "El cliente fue agregado correctamente" :
                         "El cliente fue modificado correctamente");
+                tablaClientes.refresh();
                 cargarClientes();
                 Nuevo();
             } else {
@@ -94,6 +95,7 @@ public class ClienteController {
 
         if (clienteServicio.eliminarCliente(seleccionado)) {
             AlertaFactory.Informacion("Éxito", "El cliente ha sido eliminado correctamente.");
+            tablaClientes.refresh();
             cargarClientes();
             Nuevo();
         } else {

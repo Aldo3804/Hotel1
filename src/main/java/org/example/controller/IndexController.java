@@ -6,14 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import org.example.complementos.Reloj;
 import org.example.complementos.animaciones.Eventos;
 import org.example.complementos.animaciones.stack.CambiarColor;
 
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class IndexController {
@@ -28,10 +32,16 @@ public class IndexController {
     @FXML
     private StackPane contenedor;
 
+    @FXML
+    private Label lblFecha,lblHora;
+
+    private Reloj reloj = new Reloj();
 
     public void initialize() throws IOException {
         complementos();
         inicio();
+        lblFecha.setText(LocalDate.now().toString());
+        reloj.mostrarReloj(lblHora);
     }
 
     @FXML

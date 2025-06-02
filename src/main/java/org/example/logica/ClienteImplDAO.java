@@ -44,7 +44,6 @@ public class ClienteImplDAO implements ClienteDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e;
         }
 
         return clientes;
