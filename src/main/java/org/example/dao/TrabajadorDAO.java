@@ -4,6 +4,7 @@ package org.example.dao;
 
 
 
+import org.example.entidades.Persona;
 import org.example.entidades.Trabajador;
 
 import java.util.List;
@@ -12,10 +13,7 @@ public interface TrabajadorDAO {
 
     List<Trabajador> listarTrabajador();
 
-    boolean agregarTrabajador(Trabajador trabajador);
+    Persona buscarTrabajadorPorId(int id);
 
-    boolean eliminarTrabajador(int id);
-
-    boolean actualizarPersona(Trabajador trabajador);
-
+    Trabajador iniciarSesion(String login,String password);
 }

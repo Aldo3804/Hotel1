@@ -33,15 +33,18 @@ public class IndexController {
     private StackPane contenedor;
 
     @FXML
-    private Label lblFecha,lblHora;
+    private Label lblFecha,lblHora,lblNombre;
 
     private Reloj reloj = new Reloj();
 
+
     public void initialize() throws IOException {
+        DatosController dc = DatosController.getInstance();
         complementos();
         inicio();
         lblFecha.setText(LocalDate.now().toString());
         reloj.mostrarReloj(lblHora);
+        lblNombre.setText(String.join(", ", dc.getNombre(), dc.getApellido()));
     }
 
     @FXML

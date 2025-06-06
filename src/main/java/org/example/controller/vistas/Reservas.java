@@ -3,6 +3,7 @@ package org.example.controller.vistas;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.example.complementos.CargarFXML;
+import org.example.controller.DatosController;
 
 
 import java.io.IOException;
@@ -15,7 +16,8 @@ public class Reservas {
 
     public void initialize() {
 
-
+        DatosController dc = DatosController.getInstance();
+        System.out.println(dc.getNombre());
 
     }
 
